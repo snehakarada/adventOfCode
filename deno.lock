@@ -1,0 +1,30 @@
+{
+  "version": "4",
+  "specifiers": {
+    "npm:lodash@^4.17.21": "4.17.21"
+  },
+  "npm": {
+    "lodash@4.17.21": {
+      "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
+    }
+  },
+  "redirects": {
+    "https://deno.land/std/hash/mod.ts": "https://deno.land/std@0.224.0/hash/mod.ts",
+    "https://esm.sh/@types/md5@~2.3.5/index.d.ts": "https://esm.sh/@types/md5@2.3.5/index.d.ts",
+    "https://esm.sh/is-buffer@~1.1.6?target=denonext": "https://esm.sh/is-buffer@1.1.6?target=denonext",
+    "https://esm.sh/md5": "https://esm.sh/md5@2.3.0"
+  },
+  "remote": {
+    "https://esm.sh/charenc@0.0.2/denonext/charenc.mjs": "6fc2e19e6643aef1f556e4e22220af22c2e6ed1073cfcae955b5da185e031a27",
+    "https://esm.sh/crypt@0.0.2/denonext/crypt.mjs": "1d6c3a614b29d37a142d92474d01767291704a2ce636455ec92c19577f4f8c95",
+    "https://esm.sh/is-buffer@1.1.6/denonext/is-buffer.mjs": "7264928a1661a6654cb91eaf80e03f231916a18ed5f0ee777eb923fa7a6030a2",
+    "https://esm.sh/is-buffer@1.1.6?target=denonext": "f56968ea9b1be60f7718da02368a7c93863121b25dfd575ad7540f7eb33b59d3",
+    "https://esm.sh/md5@2.3.0": "60961d3b2a478ff3376f24533ac14fa129c66954c1b53a3a6005409c8cdb9446",
+    "https://esm.sh/md5@2.3.0/denonext/md5.mjs": "537b5ecbeb97c6a319b82444ff5ff96c8b05b3b5594721bf9ca8a59bf7a9d206"
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:lodash@^4.17.21"
+    ]
+  }
+}

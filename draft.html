@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dynamic Stacked Bar Chart</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        width: 50vw;
+      }
+
+      .bar-container {
+        margin-bottom: 20px;
+      }
+
+      .bar-label {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .bar {
+        display: flex;
+        height: 40px;
+        background-color: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .segment {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        white-space: nowrap;
+        margin-right: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Dynamic Horizontal Stacked Bar Chart</h2>
+    <div id="chart"></div>
+
+    <script>
+      const data = [
+        {
+          category: "svg",
+          segments: [{ label: "map", value: 94385, color: "#1E2A38" }],
+        },
+        {
+          category: "Public",
+          segments: [
+            { label: "CSS", value: 720, color: "#333333" },
+            { label: "HTML", value: 134, color: "#4B2E2E" },
+            { label: "JS", value: 426, color: "#2F4F4F" },
+          ],
+        },
+        {
+          category: "Typescript",
+          segments: [
+            { label: "src", value: 1061, color: "#6B8E23" },
+            { label: "test", value: 2652, color: "#3B6E6E" },
+            { label: "maps", value: 1687, color: "#B7410E" },
+          ],
+        },
+      ];
+
+      function renderChart(data) {
+        const chart = document.getElementById("chart");
+        chart.innerHTML = "";
+
+        data.forEach((item) => {
+          const container = document.createElement("div");
+          container.className = "bar-container";
+
+          const label = document.createElement("div");
+          label.className = "bar-label";
+          label.textContent = item.category;
+          container.appendChild(label);
+
+          const bar = document.createElement("div");
+          bar.className = "bar";
+
+          const total = item.segments.reduce((sum, seg) => sum + seg.value, 0);
+
+          item.segments.forEach((seg) => {
+            const segment = document.createElement("div");
+            segment.className = "segment";
+            segment.style.backgroundColor = seg.color;
+            segment.style.width = `${(seg.value / total) * 100}%`;
+            segment.textContent = `${seg.label} (${seg.value})`;
+            bar.appendChild(segment);
+          });
+
+          container.appendChild(bar);
+          chart.appendChild(container);
+        });
+      }
+
+      renderChart(data);
+    </script>
+  </body>
+</html>
